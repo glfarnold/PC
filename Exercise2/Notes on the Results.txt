@@ -1,0 +1,5 @@
+Klueber, Conrad, Arnold
+
+In the resulting visualisation of the benchmark, the demarcation from the L1 to the L2 cache (at 32 kB) is clear, whereas the transition to L3 (1 MB) and RAM (24 MB) is less obvious.
+The Skylake Microarchitecture (which Intel lists as the architecture that the benchmarked processor uses) notes that the L1 cache has triple the bandwidth of the L2 cache, which in turn has double the bandwidth of the L3 cache.
+This fact, combined with the observation that the benchmarked speeds are nowhere close to the theoretical maximum, means that the resulting code was likely simply poorly optimised for the tested architecture. Perhaps multithreading would bring the results much closer in line to the expected values.

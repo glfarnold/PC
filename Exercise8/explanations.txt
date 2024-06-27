@@ -1,0 +1,9 @@
+11.1
+
+The mkn pattern rapidly iterates through the rows of matrix B. Each element from a row is multiplied with a single value from A, and the result is added to the appropriate position in C, which keeps iterating over the same row. After each row in B is finished iterating, the value retrieved from A is shifted by 1 column to the right, and the process keeps repeating until A has reached the end of its row. Only then does C begin calculating its next row.
+
+Since every matrix is accessed row-wise, data locality can be maximally exploited, and it compares very favourably to other permutations (being equal to mnk, and superior to all others).
+
+11.2
+
+While blocking in both the k and m dimensions increases performance for smaller array sizes, once the L1 cache is unable to hold the entire matrix (at dimensions around 128x128~256x256), performance drastically decreases for m dimension blocking as capacity misses start to appear due to the lower half of the matrix needing to be reloaded every iteration (and subsequently, the upper half of the next iteration too). This leads to another drop at matrix dimensions around 1024x1024, as even the L2 cache becomes unable to hold the entire matrix.

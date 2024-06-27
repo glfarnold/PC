@@ -1,0 +1,4 @@
+Klueber, Conrad, Arnold
+
+The C++ code was compiled using gcc. The -Ofast and -ffast_math flags were used to generally speed up the calculation as much as possible, with -march=native further optimizing it for the node that it would be run on.
+-fopenmp was added to measure multi-threading performance, though we didn't perform those tests in the end.

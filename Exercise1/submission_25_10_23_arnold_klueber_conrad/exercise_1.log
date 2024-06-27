@@ -1,0 +1,459 @@
+Arnold, Klüber
+
+3.1
+command: sacct --version
+outcome: slurm 18.08.3
+command: sinfo --states=idle
+outcome: 
+PARTITION   AVAIL  TIMELIMIT  NODES  STATE NODELIST
+b_test         up    3:00:00      2   idle node[001-002]
+b_standard*    up 8-08:00:00      0    n/a
+gpu_test       up    1:00:00      1   idle node127
+gpu_p100       up 8-08:00:00      2   idle node[128-129]
+gpu_v100       up 8-08:00:00      1   idle node130
+gpu_a100       up 8-08:00:00      0    n/a
+b_fat          up 8-08:00:00      0    n/a
+s_test         up    3:00:00      1   idle node141
+s_standard     up 8-08:00:00      0    n/a
+s_fat          up 8-08:00:00      0    n/a
+s_hadoop       up 8-08:00:00      9   idle node[281-289]
+s_parallel     up 2-00:00:00      1   idle node314 
+
+command: squeue
+outcome: 
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           1989479 b_standar       nd  su36pic PD       0:00     15 (Resources)
+           1989480 b_standar        d  su36pic PD       0:00     15 (Priority)
+           1989757 b_standar bameta39  mo63poy PD       0:00      4 (Priority)
+           1991172 b_standar   run.sh  ve48qak PD       0:00      1 (Priority)
+           1990155     s_fat r103_03.  fu84mov PD       0:00      1 (Resources)
+           1990186 s_standar PTE_augc  po76yif PD       0:00      2 (Priority)
+           1990185 s_standar DpqTPA_R  ji39tej PD       0:00      1 (Priority)
+           1990184 s_standar ZnO_5lay  po76yif PD       0:00      2 (Resources)
+           1990189 s_standar ZnO_5lay  po76yif PD       0:00      2 (Priority)
+           1990188 s_standar ZnO_5lay  po76yif PD       0:00      2 (Priority)
+           1990221 b_standar      118  di93niw PD       0:00      6 (Priority)
+           1990225 b_standar      212  di93niw PD       0:00      4 (Priority)
+           1990226 b_standar      214  di93niw PD       0:00      4 (Priority)
+           1990205 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990210 s_standar rM-09dos  fu84mov PD       0:00      1 (Priority)
+           1990209 s_standar rM-09pbe  fu84mov PD       0:00      1 (Priority)
+           1990259 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990260 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990261 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990258 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990257 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990256 s_standar xtb_batc  qu36gol PD       0:00      1 (Priority)
+           1990273 s_standar SLy_BH_m  mo63poy PD       0:00      1 (Priority)
+           1990274 s_standar SLy_BH_m  mo63poy PD       0:00      1 (Priority)
+           1990289 s_standar DpqTPA_C  ji39tej PD       0:00      1 (Priority)
+           1990290 s_standar DpqTPA_C  ji39tej PD       0:00      1 (Priority)
+           1990291 s_standar DpqTPA_C  ji39tej PD       0:00      1 (Priority)
+           1990292 s_standar DpqTPA_C  ji39tej PD       0:00      1 (Priority)
+           1990294     s_fat orca_tem  ki87jen PD       0:00      1 (Priority)
+           1990296     s_fat orca_tem  ki87jen PD       0:00      1 (Priority)
+           1990776 b_standar 12_subse  no63yel PD       0:00      1 (Priority)
+           1990777 b_standar 13_subse  no63yel PD       0:00      1 (Priority)
+           1990778 b_standar 14_subse  no63yel PD       0:00      1 (Priority)
+           1990779 b_standar 15_subse  no63yel PD       0:00      1 (Priority)
+           1990780 b_standar 16_subse  no63yel PD       0:00      1 (Priority)
+           1990781 b_standar 17_subse  no63yel PD       0:00      1 (Priority)
+           1990782 b_standar 18_subse  no63yel PD       0:00      1 (Priority)
+           1990783 b_standar 19_subse  no63yel PD       0:00      1 (Priority)
+           1990784 b_standar 20_subse  no63yel PD       0:00      1 (Priority)
+           1990785 b_standar 21_subse  no63yel PD       0:00      1 (Priority)
+           1990786 b_standar 22_subse  no63yel PD       0:00      1 (Priority)
+           1990787 b_standar 23_subse  no63yel PD       0:00      1 (Priority)
+           1990788 b_standar 24_subse  no63yel PD       0:00      1 (Priority)
+           1990789 b_standar 25_subse  no63yel PD       0:00      1 (Priority)
+           1990790 b_standar 26_subse  no63yel PD       0:00      1 (Priority)
+           1990791 b_standar 27_subse  no63yel PD       0:00      1 (Priority)
+           1990792 b_standar 28_subse  no63yel PD       0:00      1 (Priority)
+           1990793 b_standar 29_subse  no63yel PD       0:00      1 (Priority)
+           1990794 b_standar 30_subse  no63yel PD       0:00      1 (Priority)
+           1990795 b_standar 31_subse  no63yel PD       0:00      1 (Priority)
+           1990796 b_standar 32_subse  no63yel PD       0:00      1 (Priority)
+           1990797 b_standar 33_subse  no63yel PD       0:00      1 (Priority)
+           1990798 b_standar 34_subse  no63yel PD       0:00      1 (Priority)
+           1990799 b_standar 35_subse  no63yel PD       0:00      1 (Priority)
+           1990800 b_standar 36_subse  no63yel PD       0:00      1 (Priority)
+           1990801 b_standar 37_subse  no63yel PD       0:00      1 (Priority)
+           1990802 b_standar 38_subse  no63yel PD       0:00      1 (Priority)
+           1990803 b_standar 39_subse  no63yel PD       0:00      1 (Priority)
+           1990804 b_standar 40_subse  no63yel PD       0:00      1 (Priority)
+           1990805 b_standar 41_subse  no63yel PD       0:00      1 (Priority)
+           1990806 b_standar 42_subse  no63yel PD       0:00      1 (Priority)
+           1990807 b_standar 43_subse  no63yel PD       0:00      1 (Priority)
+           1990808 b_standar 44_subse  no63yel PD       0:00      1 (Priority)
+           1990809 b_standar 45_subse  no63yel PD       0:00      1 (Priority)
+           1990810 b_standar 46_subse  no63yel PD       0:00      1 (Priority)
+           1990811 b_standar 47_subse  no63yel PD       0:00      1 (Priority)
+           1990812 b_standar 48_subse  no63yel PD       0:00      1 (Priority)
+           1990813 b_standar 49_subse  no63yel PD       0:00      1 (Priority)
+           1990814 b_standar 50_subse  no63yel PD       0:00      1 (Priority)
+           1990815 b_standar 51_subse  no63yel PD       0:00      1 (Priority)
+           1990816 b_standar 52_subse  no63yel PD       0:00      1 (Priority)
+           1990817 b_standar 53_subse  no63yel PD       0:00      1 (Priority)
+           1990818 b_standar 54_subse  no63yel PD       0:00      1 (Priority)
+           1990819 b_standar 55_subse  no63yel PD       0:00      1 (Priority)
+           1990820 b_standar 56_subse  no63yel PD       0:00      1 (Priority)
+           1990821 b_standar 57_subse  no63yel PD       0:00      1 (Priority)
+           1990822 b_standar 58_subse  no63yel PD       0:00      1 (Priority)
+           1990823 b_standar 59_subse  no63yel PD       0:00      1 (Priority)
+           1990824 b_standar 60_subse  no63yel PD       0:00      1 (Priority)
+           1990825 b_standar 61_subse  no63yel PD       0:00      1 (Priority)
+           1990826 b_standar 62_subse  no63yel PD       0:00      1 (Priority)
+           1990827 b_standar 63_subse  no63yel PD       0:00      1 (Priority)
+           1990828 b_standar 64_subse  no63yel PD       0:00      1 (Priority)
+           1990829 b_standar 65_subse  no63yel PD       0:00      1 (Priority)
+           1990830 b_standar 66_subse  no63yel PD       0:00      1 (Priority)
+           1990831 b_standar 67_subse  no63yel PD       0:00      1 (Priority)
+           1990832 b_standar 68_subse  no63yel PD       0:00      1 (Priority)
+           1990833 b_standar 69_subse  no63yel PD       0:00      1 (Priority)
+           1990834 b_standar 70_subse  no63yel PD       0:00      1 (Priority)
+           1990835 b_standar 71_subse  no63yel PD       0:00      1 (Priority)
+           1990836 b_standar 72_subse  no63yel PD       0:00      1 (Priority)
+           1990837 b_standar 73_subse  no63yel PD       0:00      1 (Priority)
+           1990838 b_standar 74_subse  no63yel PD       0:00      1 (Priority)
+           1990839 b_standar 75_subse  no63yel PD       0:00      1 (Priority)
+           1990840 b_standar 76_subse  no63yel PD       0:00      1 (Priority)
+           1990841 b_standar 77_subse  no63yel PD       0:00      1 (Priority)
+           1990842 b_standar 78_subse  no63yel PD       0:00      1 (Priority)
+           1990843 b_standar 79_subse  no63yel PD       0:00      1 (Priority)
+           1990844 b_standar 80_subse  no63yel PD       0:00      1 (Priority)
+           1990845 b_standar 81_subse  no63yel PD       0:00      1 (Priority)
+           1990846 b_standar 82_subse  no63yel PD       0:00      1 (Priority)
+           1990847 b_standar 83_subse  no63yel PD       0:00      1 (Priority)
+           1990848 b_standar 84_subse  no63yel PD       0:00      1 (Priority)
+           1990849 b_standar 85_subse  no63yel PD       0:00      1 (Priority)
+           1990850 b_standar 86_subse  no63yel PD       0:00      1 (Priority)
+           1990851 b_standar 87_subse  no63yel PD       0:00      1 (Priority)
+           1990852 b_standar 88_subse  no63yel PD       0:00      1 (Priority)
+           1990853 b_standar 89_subse  no63yel PD       0:00      1 (Priority)
+           1990854 b_standar 90_subse  no63yel PD       0:00      1 (Priority)
+           1990855 b_standar 91_subse  no63yel PD       0:00      1 (Priority)
+           1990856 b_standar 92_subse  no63yel PD       0:00      1 (Priority)
+           1990857 b_standar 93_subse  no63yel PD       0:00      1 (Priority)
+           1990858 b_standar 94_subse  no63yel PD       0:00      1 (Priority)
+           1990859 b_standar 95_subse  no63yel PD       0:00      1 (Priority)
+           1990860 b_standar 96_subse  no63yel PD       0:00      1 (Priority)
+           1990345 s_standar SLy_BH_m  mo63poy PD       0:00      1 (Priority)
+           1990760 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1990375 b_standar b-Ht-AE_  fo29low PD       0:00      1 (Priority)
+           1990377 b_standar b-Ht-CQ_  fo29low PD       0:00      1 (Priority)
+           1991124 s_standar    0p0s1  mi37fud PD       0:00      1 (Priority)
+           1990483 b_standar     ENG0  mu76rom PD       0:00      1 (Priority)
+           1990484 b_standar     ENG1  mu76rom PD       0:00      1 (Priority)
+           1990485 b_standar     ENG2  mu76rom PD       0:00      1 (Priority)
+           1990486 b_standar     ENG3  mu76rom PD       0:00      1 (Priority)
+           1990487 b_standar     ENG4  mu76rom PD       0:00      1 (Priority)
+           1990488 b_standar     ENG5  mu76rom PD       0:00      1 (Priority)
+           1990680 b_standar  a6c-inj  re89yow PD       0:00     12 (Priority)
+           1990679 s_standar O4_PMI_3  po76yif PD       0:00      1 (Priority)
+           1990699 s_standar O4_PMI_v  po76yif PD       0:00      1 (Priority)
+           1990700 s_standar O4_PDE_v  po76yif PD       0:00      1 (Priority)
+           1990701 s_standar O4_PMI_c  po76yif PD       0:00      1 (Priority)
+           1990705 s_standar BFO_DW_L  po76yif PD       0:00      1 (Priority)
+           1990861 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990862 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990863 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990864 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990865 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990866 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990867 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990868 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990869 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990870 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990871 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990872 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990873 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990874 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990886     b_fat fancy_g1  zo58jib PD       0:00      1 (Resources)
+           1990887     b_fat fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990888     b_fat fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990940 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990941 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990942 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990943 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990944 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990945 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990946 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990947 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990948 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990949 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990950 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990951 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990952 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1990981 s_standar h0.05_p1  du23lag PD       0:00      3 (Priority)
+           1990982 s_standar h0.15_p1  du23lag PD       0:00      3 (Priority)
+           1990983 s_standar h0.1_p19  du23lag PD       0:00      3 (Priority)
+           1990984 s_standar h0.2_p19  du23lag PD       0:00      3 (Priority)
+           1990985 s_standar n0.2_p19  du23lag PD       0:00      3 (Priority)
+           1990986 s_standar n0.1_p19  du23lag PD       0:00      3 (Priority)
+           1990987 s_standar n0.15_p1  du23lag PD       0:00      3 (Priority)
+           1990988 s_standar n0.05_p1  du23lag PD       0:00      3 (Priority)
+           1990989 s_standar ch0.05_p  du23lag PD       0:00      3 (Priority)
+           1990990 s_standar cn0.05_p  du23lag PD       0:00      3 (Priority)
+           1991134 s_standar  she_cpj  ne34lij PD       0:00      1 (Priority)
+           1991009 s_standar orca_tem  ki87jen PD       0:00      1 (Priority)
+           1991019 s_standar orca_tem  ki87jen PD       0:00      1 (Priority)
+           1991166 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991175 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991176 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991177 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991178 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991179 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991180 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991181 b_standar 4hf_chai  pe96yeq PD       0:00      1 (Priority)
+           1991165 b_standar submit.s  me42min PD       0:00      4 (Priority)
+           1991167 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1991168 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1991169 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1991171 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1991174 b_standar deaza-2p  fi75caz PD       0:00      1 (Priority)
+           1991077 b_standar asym_000  mu76rom PD       0:00      1 (Priority)
+           1991091 s_standar BFO_DW_L  po76yif PD       0:00      1 (Priority)
+           1991096 s_standar     left  su36pic PD       0:00     10 (Priority)
+           1991097 s_standar    right  su36pic PD       0:00     10 (Priority)
+ 1991103_[0-19%20] s_standar cSi_squa  mo82kux PD       0:00      3 (Priority)
+     1991113_[1%2] s_paralle ONN_FT_N  mo82kux PD       0:00      4 (Resources)
+   1991121_[0-4%5] s_paralle ONN_FT_N  mo82kux PD       0:00      6 (Priority)
+           1991150 s_paralle      Cu1  wa86jof PD       0:00      4 (Priority)
+           1991153 s_paralle   un-Cu1  wa86jof PD       0:00      4 (Priority)
+           1991154 s_paralle      Cu2  wa86jof PD       0:00      4 (Priority)
+           1991155 s_paralle   un-Cu2  wa86jof PD       0:00      4 (Priority)
+           1991156 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991157 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991158 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991159 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991160 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991161 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991162 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991163 s_standar fancy_g1  zo58jib PD       0:00      1 (Priority)
+           1991170 s_standar     elec  fe82mej PD       0:00      8 (Priority)
+           1989872 s_standar ResNet_s  wi25hoy  R 2-04:39:22      1 node173
+           1991182 b_standar fibonacc  co92zux  R       2:58      1 node017
+           1991127 s_standar      CdS  ze87daf  R    2:27:29      1 node218
+           1988397     s_fat orca_tem  ki87jen  R 8-12:11:54      1 node272
+           1988053 b_standar  111N7B6  su37jov  R 5-02:22:33      4 node[050,114,116,121]
+           1988052 b_standar  111N7B5  su37jov  R 5-05:50:20      4 node[038,048-049,066]
+           1988051 b_standar  111N7B4  su37jov  R 5-10:55:18      4 node[019,115,118,126]
+           1989465 s_standar RanDepic  ce85vof  R    8:09:20      1 node166
+           1989460 s_standar RanDepic  ce85vof  R    8:46:00      1 node211
+           1989464 s_standar RanDepic  ce85vof  R   18:55:36      1 node185
+           1989462 s_standar RanDepic  ce85vof  R   23:57:57      1 node181
+           1989463 s_standar RanDepic  ce85vof  R 1-01:20:51      1 node233
+           1989461 s_standar RanDepic  ce85vof  R 1-04:26:26      1 node242
+           1989459 s_standar RanDepic  ce85vof  R 1-04:26:44      1 node213
+           1989458 s_standar RanDepic  ce85vof  R 1-04:26:50      1 node200
+           1989457 s_standar RanDepic  ce85vof  R 1-04:26:52      1 node197
+           1989456 s_standar RanDepic  ce85vof  R 1-04:26:57      1 node172
+           1989455 s_standar RanDepic  ce85vof  R 1-08:58:09      1 node177
+           1989454 s_standar RanDepic  ce85vof  R 1-13:07:21      1 node164
+           1989453 s_standar RanDepic  ce85vof  R 1-15:45:26      1 node186
+           1989452 s_standar RanDepic  ce85vof  R 1-16:16:09      1 node161
+           1989451 s_standar RanDepic  ce85vof  R 1-16:46:45      1 node209
+           1989450 s_standar RanDepic  ce85vof  R 1-18:35:57      1 node196
+           1989449 s_standar RanDepic  ce85vof  R 1-19:03:11      1 node163
+           1989448 s_standar RanDepic  ce85vof  R 1-19:39:53      1 node175
+           1989447 s_standar RanDepic  ce85vof  R 1-19:46:21      1 node174
+           1989446 s_standar RanDepic  ce85vof  R 1-20:01:47      1 node178
+           1989445 s_standar RanDepic  ce85vof  R 1-20:07:33      1 node179
+           1989444 s_standar RanDepic  ce85vof  R 1-20:14:00      1 node249
+           1989443 s_standar RanDepic  ce85vof  R 1-20:18:34      1 node238
+           1989442 s_standar RanDepic  ce85vof  R 1-20:33:19      1 node265
+           1989441 s_standar RanDepic  ce85vof  R 1-20:39:21      1 node190
+           1989440 s_standar RanDepic  ce85vof  R 1-20:53:25      1 node188
+           1989439 s_standar RanDepic  ce85vof  R 1-21:00:45      1 node264
+           1989429 b_standar RanDepic  ce85vof  R 3-03:44:20      1 node005
+           1989426 s_standar RanDepic  ce85vof  R 3-04:54:24      1 node176
+           1988743 b_standar   run.sh  se75mad  R 8-00:59:43      1 node017
+           1989206 b_standar    V09LR  ko54hel  R 2-03:08:49     16 node[007,020-021,031-034,040-041,043-044,055-057,095-096]
+           1989204 b_standar    V10LR  ko54hel  R 2-10:10:06     16 node[008,016,022,027,035,052,061,069,081-082,087-090,092-093]
+           1988714 s_standar cmpd_1L_  fo29low  R 5-00:40:54      1 node253
+           1989481 s_standar     avrg  su36pic  R 3-07:00:22     20 node[171,192,194,199,204-205,210,224-225,231,237,251,255-259,261,267,276]
+           1989756 b_standar bameta19  mo63poy  R 2-09:32:47      4 node[059,072,080,097]
+           1989659     s_fat    Gea40  ze87daf  R 3-02:24:41      2 node[269,271]
+           1990183 s_standar ZnO_5lay  po76yif  R    1:17:01      2 node[191,223]
+           1990228 s_standar      218  di93niw  R    3:15:42      6 node[184,187,217,220,230,239]
+           1990124 b_standar 5F_charg  ji39tej  R    4:46:26      2 node[011,046]
+           1990305 b_standar orca_tem  ki87jen  R    1:22:42      1 node018
+           1990775 b_standar 11_subse  no63yel  R    2:29:25      1 node119
+           1990774 b_standar 10_subse  no63yel  R    2:58:52      1 node101
+           1990773 b_standar 9_subset  no63yel  R    3:33:25      1 node025
+           1990772 b_standar 8_subset  no63yel  R    3:46:21      1 node102
+           1990771 b_standar 7_subset  no63yel  R    3:47:23      1 node123
+           1990222 s_standar      116  di93niw  R    4:49:05      4 node[244,248,254,266]
+           1990227 s_standar      216  di93niw  R    4:49:02      4 node[195,198,201,212]
+           1990770 b_standar 6_subset  no63yel  R    4:40:45      1 node076
+           1990766 b_standar 2_subset  no63yel  R    8:45:58      1 node064
+           1990603 s_standar Validate  ce85vof  R    7:40:08      1 node262
+           1990765 b_standar 1_subset  no63yel  R   11:49:28      1 node110
+           1989326 s_standar DpqTPA_C  ji39tej  R 4-18:07:26      1 node183
+           1989332 s_standar MS1b_BH_  mo63poy  R 4-18:04:29      1 node182
+           1989955 b_standar asym_000  mu76rom  R   22:35:00      1 node065
+           1989956 b_standar asym_000  mu76rom  R   22:35:00      1 node136
+           1990762 s_standar _0p5tovS  mi37fud  R   23:26:20      1 node262
+           1989633 s_standar      115  di93niw  R 4-09:18:53      4 node[202-203,206-207]
+           1989953 b_standar asym_000  mu76rom  R 1-01:12:40      1 node074
+           1989954 b_standar asym_000  mu76rom  R 1-01:12:40      1 node098
+           1991140 b_standar     bash  mi37fud  R    1:35:06      1 node027
+           1991123 s_standar   0p25s1  mi37fud  R    2:47:31      1 node262
+           1989952 b_standar asym_000  mu76rom  R 1-01:49:57      1 node051
+           1989950 b_standar asym_000  mu76rom  R 1-02:55:24      1 node111
+           1989946 b_standar asym_000  mu76rom  R 1-02:59:30      1 node124
+           1989936 b_standar asym_000  mu76rom  R 1-04:26:20      1 node014
+           1989937 b_standar asym_000  mu76rom  R 1-04:26:50      1 node091
+           1989942 b_standar asym_000  mu76rom  R 1-04:26:20      1 node024
+           1989926 b_standar asym_000  mu76rom  R 1-05:29:42      1 node026
+           1989927 b_standar asym_000  mu76rom  R 1-05:29:42      1 node058
+           1989932 b_standar asym_000  mu76rom  R 1-05:29:42      1 node060
+           1989933 b_standar asym_000  mu76rom  R 1-05:29:42      1 node077
+           1989934 b_standar asym_000  mu76rom  R 1-05:29:42      1 node079
+           1989935 b_standar asym_000  mu76rom  R 1-05:29:42      1 node099
+           1990885     b_fat fancy_g1  zo58jib  R    1:57:56      1 node138
+           1989923 b_standar asym_000  mu76rom  R 1-08:10:40      1 node045
+           1989710 s_standar ty_star1  mo63poy  R 4-03:49:16      1 node228
+           1989018 b_standar cmpd_1L_  fo29low  R 6-04:12:00      1 node006
+           1989024 b_standar  cmpd_3L  fo29low  R 6-04:05:39      1 node083
+           1989027 b_standar b-Ht-AE_  fo29low  R 6-04:05:39      1 node084
+           1989020 b_standar cmpd_nL_  fo29low  R 6-04:09:29      1 node004
+           1989019 b_standar cmpd_1L_  fo29low  R 6-04:11:00      1 node003
+           1989028 b_standar b-Ht-DU1  fo29low  R 6-04:05:39      1 node085
+           1989922 b_standar asym_000  mu76rom  R 1-08:43:48      1 node086
+           1990675 s_standar Relax_LR  di86kiq  R   23:23:13      1 node262
+           1989836 s_standar MS_APWYU  matstud  R 2-08:55:11      1 node219
+           1989017 b_standar cmpd_3L_  fo29low  R 6-05:51:17      1 node125
+           1989015 b_standar b-Ht_-MQ  fo29low  R 6-06:13:21      1 node122
+           1989755 b_standar bameta06  mo63poy  R 4-04:30:51      4 node[036-037,063,071]
+           1989840 b_standar MS_AQG65  matstud  R 2-10:10:06      2 node[112,120]
+           1988993 b_standar bam_96_8  mo63poy  R 6-07:43:07      8 node[023,042,068,075,078,104,107-108]
+           1989835 s_standar MS_APQYP  matstud  R 2-10:45:22      1 node170
+           1989918 b_standar asym_000  mu76rom  R 1-12:01:45      1 node010
+           1989917 b_standar asym_000  mu76rom  R 1-12:07:37      1 node113
+           1989914 b_standar asym_000  mu76rom  R 1-12:12:38      1 node039
+           1989832 s_standar    testa  fe82mej  R 2-15:39:33      8 node[162,167,215,227,229,234,240,268]
+           1990697 b_standar NbSe2_Re  di86kiq  R 1-03:31:38      1 node052
+           1990685 b_standar NbSe2_Re  di86kiq  R 1-03:41:57      1 node016
+           1989910 b_standar asym_000  mu76rom  R 1-14:27:39      1 node106
+           1989834 s_standar MS_APHYL  matstud  R 2-14:33:38      1 node278
+           1989119 s_standar SLy_BH_m  mo63poy  R 6-03:36:39      1 node165
+           1989833 s_standar MS_APXYF  matstud  R 2-15:32:51      1 node235
+           1989600 b_standar asym_000  mu76rom  R 4-15:52:53      1 node054
+           1989605 b_standar asym_000  mu76rom  R 4-15:48:23      1 node105
+           1989604 b_standar asym_000  mu76rom  R 4-15:52:53      1 node100
+           1991031  gpu_a100 Con_Ray_  lu72hip  R   18:39:33      1 node133
+           1991027  gpu_a100 Con_Ray_  lu72hip  R   19:28:45      1 node134
+           1991030  gpu_a100 Con_Ray_  lu72hip  R   19:26:13      1 node133
+           1988796 s_standar b-Ht-CQ_  fo29low  R 7-10:48:41      1 node216
+           1990263 s_standar s3b80d36  de38gik  R 1-21:02:18      1 node222
+           1988986 s_standar b-Ht-CQ_  fo29low  R 6-14:59:14      1 node280
+           1988988 s_standar b-Ht-DU1  fo29low  R 6-14:59:00      1 node279
+           1988987 s_standar b-Ht-DU1  fo29low  R 6-14:59:08      1 node245
+           1988980 s_standar Ht-2CQ_4  fo29low  R 6-15:15:51      1 node214
+           1988985 s_standar Ht-2CQ_2  fo29low  R 6-15:15:51      1 node221
+           1989589 b_standar asym_000  mu76rom  R 4-18:42:37      1 node029
+           1991063  gpu_a100 Con_Ray_  lu72hip  R   15:23:27      1 node132
+           1989591 b_standar asym_000  mu76rom  R 4-18:34:53      1 node013
+           1989592 b_standar asym_000  mu76rom  R 4-18:34:53      1 node015
+           1989754 b_standar bameta0_  mo63poy  R 4-12:53:39      4 node[030,062,070,103]
+           1988795 s_standar b-Ht-CQ_  fo29low  R 7-12:45:08      1 node260
+           1990276 s_paralle bhns_ath  mo63poy  R 1-14:31:18      4 node[148-151]
+           1989804     b_fat       T4  ye47wiv  R 4-15:50:51      1 node139
+           1991164  gpu_a100 Con_Ray_  lu72hip  R      41:55      1 node131
+           1988731 s_standar cmpd_1L_  fo29low  R 7-21:56:21      1 node263
+           1989802 b_standar cmpd_nL_  fo29low  R 4-13:07:21      1 node067
+           1988730 s_standar cmpd_1L_  fo29low  R 7-21:59:28      1 node243
+           1989839 b_standar MS_AQV60  matstud  R 3-00:16:47      2 node[109,117]
+           1989909 b_standar asym_000  mu76rom  R 2-01:40:04      1 node047
+           1989906 b_standar asym_000  mu76rom  R 2-02:26:48      1 node009
+           1988853 s_standar b-Ht-CQ_  fo29low  R 7-05:34:53      1 node236
+           1989891 b_standar asym_000  mu76rom  R 2-03:24:58      1 node028
+           1989905 b_standar asym_000  mu76rom  R 2-03:08:49      1 node053
+           1988712 s_standar b-Ht-DU1  fo29low  R 8-00:37:45      1 node168
+           1988713 s_standar b-Ht-DU1  fo29low  R 8-00:37:45      1 node169
+           1988711 s_standar b-Ht-DU1  fo29low  R 8-00:43:56      1 node247
+         1991110_1 s_paralle ONN_FT_N  mo82kux  R    3:10:52      4 node[155-158]
+         1991113_0 s_paralle ONN_FT_N  mo82kux  R    3:10:52      4 node[157-160]
+         1991110_0 s_paralle ONN_FT_N  mo82kux  R    3:12:25      4 node[146-147,315-316]
+           1988707 s_standar b-Ht-CQ_  fo29low  R 8-01:51:46      1 node208
+           1988708 s_standar Ht-2CQ_2  fo29low  R 8-01:48:54      1 node252
+           1989838 b_standar MS_AQG5V  matstud  R 3-03:09:49      2 node[073,094]
+           1990470 s_paralle  It-Ivac  wa86jof  R 1-04:46:13      4 node[293-296]
+           1991102 s_paralle    shear  si87qiy  R    4:13:00     20 node[152-154,297-313]
+           1991075 s_paralle   bam_KS  mo63poy  R    6:05:35      4 node[142-145]
+           1990322     b_fat fancy_g1  zo58jib  R 1-19:55:18      1 node137
+           1990321     b_fat fancy_g1  zo58jib  R 1-19:55:44      1 node140
+           1989824 b_standar b-Ht_2_C  fo29low  R 3-19:53:43      1 node012
+           1989290 s_standar MS1b_BH_  mo63poy  R 6-00:45:39      1 node193
+           1989289 s_standar MS1b_BH_  mo63poy  R 6-00:46:37      1 node246
+           1989286 s_standar MS1b_BH_  mo63poy  R 6-00:48:00      1 node241
+           1988990     s_fat orca_tem  ki87jen  R 7-00:46:21      1 node270
+           1988705 s_standar b-Ht-CQ_  fo29low  R 8-02:04:20      1 node232
+           1988704 s_standar b-Ht-CQ_  fo29low  R 8-02:04:40      1 node226
+           1988698 s_standar 1494003_  fo29low  R 8-02:19:09      1 node189
+           1988697 s_standar 1494003_  fo29low  R 8-02:19:15      1 node180
+
+command: salloc -p s_hadoop --time=00:10:00 -N 2 --mem=2Mb -n 3 --cpus-per-task=2 --job-name=myjob
+output:
+salloc: Granted job allocation 1991185
+salloc: Waiting for resource configuration
+salloc: Nodes node[282-283] are ready for job
+
+command: squeue -u ju35fen
+output:
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           1991185  s_hadoop    myjob  ju35fen  R       4:31      2 node[282-283]
+
+command: scancel 1991185
+output: 
+salloc: Job allocation 1991185 has been revoked.
+
+command: squeue -u ju35fen
+output:
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             
+3.3.2
+command: sinfo --states=all -p s_hadoop
+outcome:
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+s_hadoop     up 8-08:00:00      2    mix node[282-283]
+s_hadoop     up 8-08:00:00      1  alloc node284
+s_hadoop     up 8-08:00:00      6   idle node[281,285-289]
+
+Das bedeutet das sich in der s_hadoop partition die Knoten "node[281-289]" befinden.
+
+
+command: scontrol show node node281
+outcome:
+NodeName=node281 Arch=x86_64 CoresPerSocket=18 
+   CPUAlloc=0 CPUTot=72 CPULoad=0.23
+   AvailableFeatures=all,cpu6140
+   ActiveFeatures=all,cpu6140
+   Gres=(null)
+   NodeAddr=node281 NodeHostName=node281 Version=18.08
+   OS=Linux 3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018 
+   RealMemory=190000 AllocMem=0 FreeMem=174467 Sockets=2 Boards=1
+   MemSpecLimit=2048
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=s_hadoop 
+   BootTime=2023-04-21T10:23:52 SlurmdStartTime=2023-04-21T10:24:16
+   CfgTRES=cpu=72,mem=190000M,billing=72
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 LowestJoules=0 ConsumedJoules=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   
+Jeder der Knoten "node[286-289]" hat insgesamt 72 CPUs (CPUTot=72).
+(Es genügt einen Knoten zu betrachten, da in einer partition alle nodes gleich viele CPUs besitzen)
+
+
+3.3.6
+command: squeue -u po87xox
+output:
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           1992278  s_hadoop fibonacc  po87xox  R       0:31      1 node281
+           
+3.3.7
+Der Outputfile ist leer. Das liegt daran, dass das Zeitlimit von 10min erreicht wurde und das Programm noch nicht beendet war. Somit wurde der Job abgebrochen. Dies ist im Errorfile zu erkennen.
+
